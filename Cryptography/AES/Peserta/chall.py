@@ -2,13 +2,17 @@ import base64
 import hashlib
 from Crypto.Cipher import AES
 from Crypto import Random
+
 BLOCK_SIZE = 16
-pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * chr(BLOCK_SIZE - len(s) % BLOCK_SIZE)
-unpad = lambda s: s[:-ord(s[len(s) - 1:])]
+pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * chr(
+    BLOCK_SIZE - len(s) % BLOCK_SIZE
+)
+unpad = lambda s: s[: -ord(s[len(s) - 1 :])]
 
 key = "idontknow"
-cipher = b'dtnrGf+mqpVpCUjN1FUIgai7H0TPNs62LvWEoOLCzukCQiPZBgYNKv7B+ety0JTQ'
+cipher = b"dtnrGf+mqpVpCUjN1FUIgai7H0TPNs62LvWEoOLCzukCQiPZBgYNKv7B+ety0JTQ"
 flag = ""
+
 
 def encrypt(plain_text, key):
     private_key = hashlib.sha256(key.encode("utf-8")).digest()
@@ -21,6 +25,8 @@ def encrypt(plain_text, key):
 
 def decrypt(cipher, key):
     # your code
+    pass
 
-if __name__ == '__main__':
-  print(decrypt(cipher, key))
+
+if __name__ == "__main__":
+    print(decrypt(cipher, key))

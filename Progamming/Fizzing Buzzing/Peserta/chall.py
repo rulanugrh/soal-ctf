@@ -1,12 +1,16 @@
 import unittest
 
-def fizzBuzz(number) :
-  # your code here
+
+def fizzBuzz(number):
+    # your code here
+    pass
+
 
 class TestCase(unittest.TestCase):
     def testFizzBuzz(self):
         test1 = fizzBuzz(15)
         self.assertEqual(test1, "FizzBuzz")
+
     def testBuzz(self):
         test2 = fizzBuzz(5)
         self.assertEqual(test2, "Buzz")
@@ -22,5 +26,6 @@ class TestCase(unittest.TestCase):
         test5 = fizzBuzz(1)
         self.assertEqual(test5, 1)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
